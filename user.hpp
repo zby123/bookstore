@@ -4,15 +4,37 @@
 class user {
 
 private:
-	char name[30];
-	char id[30];
-	char pwd[30];
-	int auth;
+	tstring<20> name;
+	tstring<30> id;
+	tstring<30> pwd;
+	int purview = 0;
 
 public:
-	user(char *_name, char *_pwd, int auth, char *_id) {
-
+	void setName(const tstring<20> &_name) {
+		name = _name;
 	}
+
+	void setId(const tstring<30> &_id) {
+		id = _id;
+	}
+
+	void setPwd(const tstring<30> &_pwd) {
+		pwd = _pwd;
+	}
+
+	void setPurview(int _pur) {
+		purview = _pur;
+	}
+
+	tstring<20> getName() {return name;}
+
+	tstring<30> getId() {return id;}
+
+	bool login(const tstring<30> &_pwd) {
+		return _pwd == pwd;
+	}
+
+	int getPurview() {return purview;}
 
 };
 

@@ -7,21 +7,6 @@
 
 int main(){
 
-	DB userDB<user>;
-	DB bookDB<book>;
-
-	fstream db("user.bin");
-	if (!db){
-		userDB.init("user.bin");
-		bookDB.init("book.bin");
-		user root("root", "sjtu", 7);
-		userDB.add(root);
-	}
-	else {
-		userDB.init("user.bin");
-		bookDB.init("book.bin");
-	}
-
 	fstream fin("command.txt");
 	shell cmd;
 
