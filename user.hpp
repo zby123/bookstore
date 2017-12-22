@@ -1,6 +1,9 @@
 #ifndef user_hpp
 #define user_hpp
 
+#include "tstring.hpp"
+using namespace std;
+
 class user {
 
 private:
@@ -30,11 +33,17 @@ public:
 
 	tstring<30> getId() {return id;}
 
+	tstring<30> getPwd() {return pwd;}
+
 	bool login(const tstring<30> &_pwd) {
 		return _pwd == pwd;
 	}
 
 	int getPurview() {return purview;}
+
+	operator bool() const {
+		return purview != 0;
+	}
 
 };
 
